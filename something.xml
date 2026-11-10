@@ -1,0 +1,36 @@
+<GROUP ID="001012" Name="Deposits: Transaction Enquiry">
+    <TX>
+        <FIELD Format="9(17)" ID="accntNumber1"/>
+        <FIELD Format="X(2)" ID="TxnType"/>
+    </TX>
+    <RX>
+        <SELECT switch="Flag2">
+            <CASE ID="2">
+                <FIELD Format="9(17)" ID="accntNumber1"/>
+                <FIELD Format="X(2)" ID="TxnType"/>
+                <FIELD Format="X(24)" ID="CurrBalance"/>
+                <FIELD Format="X(24)" ID="AvailBalance"/>
+                <FIELD Format="X(24)" ID="IntrstAvailable"/>
+                <FIELD Format="X(24)" ID="HoldValue"/>
+                <FIELD Format="X(120)" ID="CustName"/>
+                <FIELD Format="9(17)" ID="CustNo"/>
+            </CASE>
+            <CASEELSE>
+                <COLLECTION ID="Collection1" NumSubParts="5">
+                    <FIELD Format="9(2)" ID="TxnTypeGrid"/>
+                    <FIELD Format="X(10)" ID="TXNDate"/>
+                    <FIELD Format="X(5)" ID="TXNTime"/>
+                    <FIELD Format="9(4)" ID="BranchNo"/>
+                    <FIELD Format="9(5)" ID="TellerNo"/>
+                    <FIELD Format="9(6)" ID="TranCode"/>
+                    <FIELD Format="9(6)" ID="JrnlNo"/>
+                    <FIELD Format="X(24)" ID="Amount"/>
+                    <FIELD Format="X(24)" ID="Balance"/>
+                    <FIELD Format="X(100)" ID="Desc"/>
+                </COLLECTION>
+            </CASEELSE>
+        </SELECT>
+    </RX>
+    <META content="$Revision: 1.29.1.0 $" name="PVCS_Revision"/>
+    <META content="$Archive: //fnsweb/pvcs/archives/Front-end/Workflow/Client/Base/EN/xml/Transactions/000450.xml-arc $" name="PVCS_Archive"/>
+</GROUP>
